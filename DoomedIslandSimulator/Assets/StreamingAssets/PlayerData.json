@@ -1,3 +1,8 @@
 {
-	"VisionRange" : 1
+	"VisionRange" : 1,
+	
+	"Stats" : 
+	{
+		"MovementSpeed" : 1
+	}
 }
