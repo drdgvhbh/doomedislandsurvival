@@ -1,0 +1,61 @@
+Mono path[0] = 'D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test_Data/Managed'
+Mono path[1] = 'D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test_Data/Mono'
+Mono config path = 'D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test_Data/Mono/etc'
+PlayerConnection initialized from D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55280
+Multi-casting "[IP] 192.168.0.11 [Port] 55280 [Flags] 2 [Guid] 242722481 [EditorId] 1244981617 [Version] 1048832 [Id] WindowsPlayer(RYANLEE-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55280]
+PlayerConnection already initialized - listening to [0.0.0.0:55280]
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4008 MB
+    Driver:   21.21.13.7866
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\TextMeshPro.dll (this message is harmless)
+Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\TextMeshPro.dll into Unity Child Domain
+- Completed reload, in  0.032 seconds
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.888822 ms
+GameGrid initialized.
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Grid:CreateGrid() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\Grid.cs:85)
+Grid:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\Grid.cs:41)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/Grid.cs Line: 85)
+
+Done Texture!
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+TerrainData:UpdateTileView() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\TerrainData.cs:191)
+TerrainData:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\TerrainData.cs:33)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/TerrainData.cs Line: 191)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 3f2c -> priority: 1 

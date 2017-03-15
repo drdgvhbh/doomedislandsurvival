@@ -1,0 +1,57 @@
+{	
+	"Sides" : {
+		"Top" : 1,
+		"Left" : 2,
+		"Right" : 4,
+		"Bottom" : 8
+	}
+,
+	"DepthVariance" :
+	{
+		"Min" : -1,	//Inclusive
+		"Max" : 2	//Exclusive
+	}
+,
+	"Tiles" : 
+	{
+		"0" : 
+		{
+			"Id" : 0,
+			"Name" : "Grass",
+			"Depth" : 2,
+			"AutoTileNeighbours" : [0, 2],
+			"IsWalkable" : true,
+			"MovementCost" : 1
+		}
+,		
+		"1" : 
+		{
+			"Id" : 1,
+			"Name" : "Sand",
+			"Depth" : 4,
+			"AutoTileNeighbours" : [0, 1],
+			"IsWalkable" : true,
+			"MovementCost" : 1
+		}
+,
+		"2" : 
+		{
+			"Id" : 2,
+			"Name" : "Mountain",
+			"Depth" : 6,
+			"AutoTileNeighbours" : [1, 2],
+			"IsWalkable" : true,
+			"MovementCost" : 3
+		}
+,
+		"3" : 
+		{
+			"Id" : 3,
+			"Name" : "Water",
+			"Depth" : -1,
+			"AutoTileNeighbours" : [3],
+			"IsWalkable" : false,
+			"MovementCost" : -1
+		}
+	}
+}
