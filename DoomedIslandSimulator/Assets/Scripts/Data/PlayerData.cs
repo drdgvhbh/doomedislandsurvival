@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerData : MonoBehaviour {
     private static JSONNode DataNode;
@@ -22,14 +23,14 @@ public class PlayerData : MonoBehaviour {
     public Tile CurrentTile { get; private set; }
     public float MovementSpeed { get; set; }
 
-    private float Health;
-    private float MaximumHealth;
-    private float Stamina;
-    private float MaximumStamina;
+    public float Health { get; set; }
+    public float MaximumHealth { get; set; }
+    public float Stamina { get; set; }
+    public float MaximumStamina { get; set; }
 
-    private float Nourishment;
-    private float MaximumNourishment;
-    private int NourishmentLevel;
+    public float Nourishment { get; set; }
+    public float NourishmentThres { get; set; }
+    public int NourishmentLevel { get; set; }
 
     private HashSet<Tile> DiscoveredTiles;
 
@@ -37,15 +38,24 @@ public class PlayerData : MonoBehaviour {
     public bool IsPerformingMovingAction { get; set; }
 
     private void Awake() {
+
         VisionRange = PlayerNode["VisionRange"];
         JSONNode stats = PlayerNode["Stats"];
+        NourishmentLevel = 3;
         MovementSpeed = stats["MovementSpeed"];
+        int exp = stats["NourishmentLevels"][NourishmentLevel.ToString()];
+        MaximumHealth = (float)Math.Ceiling(Math.Pow(stats["MaximumHealth"]["Base"], exp) * stats["MaximumHealth"]["Multi"]);
+        Health = MaximumHealth;
+        MaximumStamina = (float)Math.Ceiling(Math.Pow(Math.Pow(stats["MaximumStamina"]["Base"], 1/2.0f), exp) * stats["MaximumStamina"]["Multi"]);
+        Stamina = MaximumStamina;
+        NourishmentThres = (float)Math.Ceiling(Math.Pow(stats["NourishmentThreshold"]["Base"], exp) * stats["NourishmentThreshold"]["Multi"]);
+        Nourishment =  1 / 2.0f * NourishmentThres;
         Tiles = GameGrid.GetComponent<TerrainData>().Tiles;
         DiscoveredTiles = new HashSet<Tile>();
     }
 
     private void Start() {
-        CurrentTile = Tiles[Random.Range(0, Tiles.Length)];
+        CurrentTile = Tiles[UnityEngine.Random.Range(0, Tiles.Length)];
         this.transform.position = CurrentTile.Position;
         IsPerformingAction = false;
         DiscoverTiles();
@@ -76,10 +86,10 @@ public class PlayerData : MonoBehaviour {
         for (int i = 0; i < size; i++) {
             temp = new HashSet<Tile>(RevealedTiles);
             foreach (Tile t in temp) {
-               Tile left = AddDiscoveredTile(t, Tile.Sides.Left, RevealedTiles);
-               Tile right = AddDiscoveredTile(t, Tile.Sides.Right, RevealedTiles);
-               Tile top = AddDiscoveredTile(t, Tile.Sides.Top, RevealedTiles);
-               Tile bottom = AddDiscoveredTile(t, Tile.Sides.Bottom, RevealedTiles);
+                Tile left = AddDiscoveredTile(t, Tile.Sides.Left, RevealedTiles);
+                Tile right = AddDiscoveredTile(t, Tile.Sides.Right, RevealedTiles);
+                Tile top = AddDiscoveredTile(t, Tile.Sides.Top, RevealedTiles);
+                Tile bottom = AddDiscoveredTile(t, Tile.Sides.Bottom, RevealedTiles);
 
                 if (left != null) {
                     AddDiscoveredTile(left, Tile.Sides.Bottom, RevealedTiles);

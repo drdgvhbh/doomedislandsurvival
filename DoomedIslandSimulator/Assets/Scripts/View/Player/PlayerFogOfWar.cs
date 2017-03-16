@@ -59,8 +59,8 @@ public class PlayerFogOfWar : MonoBehaviour {
                 if (Tiles[i / 2].IsDiscovered) {
                     p[j] = hitTransform.TransformPoint(vertices[triangles[i * 3 + j]]);
                     p[j + 3] = hitTransform.TransformPoint(vertices[triangles[(i + 1) * 3 + j]]);
-                    colors[triangles[i * 3 + j]] = new Color32(0, 0, 0, 50);
-                    colors[triangles[(i + 1) * 3 + j]] = new Color32(0, 0, 0, 50);
+                    colors[triangles[i * 3 + j]] = new Color32(0, 0, 0, 105);
+                    colors[triangles[(i + 1) * 3 + j]] = new Color32(0, 0, 0, 105);
                 } else {
                     colors[triangles[i * 3 + j]] = new Color32(0, 0, 0, 255);
                     colors[triangles[(i + 1) * 3 + j]] = new Color32(0, 0, 0, 255);
