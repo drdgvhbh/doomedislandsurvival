@@ -1,4 +1,9 @@
 {
-	"VisionRange" : 1,
-	"MovementInterval" : 16.66667 
+	"VisionRange" : 2
+	,
+	
+	"Stats" : 
+	{
+		"MovementSpeed" : 1
+	}
 }

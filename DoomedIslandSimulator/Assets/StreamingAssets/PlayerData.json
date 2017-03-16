@@ -1,8 +1,28 @@
 {
-	"VisionRange" : 1,
+	"VisionRange" : 2
+	,
 	
 	"Stats" : 
 	{
 		"MovementSpeed" : 1
+	}
+,
+	"NourishmentLevels" : [0, 1, 2, 3, 4],
+
+	"PrincipalExponents" : [-2, -1, 0, 1, 2],
+	"MaximumHealth" :
+	{
+		//sqrt
+		"Base" : 2,
+		"Multi" : 100.0
+	}
+,
+	"NourishmentThreshold" :
+	{
+		"Base" : 1.15,
+		"Multi" : 100.0
+	}
+,
+		}
 	}
 }

@@ -39,7 +39,7 @@ public class Grid : MonoBehaviour {
         Mesh mesh = this.GetComponent<MeshFilter>().mesh;
         mesh.Clear();
         CreateGrid();
-        this.transform.position = new Vector3(-NumRows / 2 * TileSize, NumColumns / 2 * TileSize, this.transform.position.z);
+        this.transform.position = new Vector3(-NumRows / 2 * TileSize - TileSize / 2, NumColumns / 2 * TileSize + TileSize / 2, this.transform.position.z);
     }
 
     private void Start() {

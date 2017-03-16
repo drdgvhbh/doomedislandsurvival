@@ -15,6 +15,29 @@ public class TerrainData : MonoBehaviour {
         }
     }
 
+
+    //WONKY
+    public static int GetIndexFromPosition(Vector3 pos, Grid Grid) {
+        pos -= new Vector3(Grid.TileSize / 2, -Grid.TileSize / 2);
+        Vector3 Offset = Grid.transform.position;
+        pos -= Offset;
+        pos = new Vector3(pos.x / Grid.TileSize, pos.y / Grid.TileSize, pos.z);
+        int idx = (int)(Mathf.Round(-pos.y) * Grid.NumColumns + Mathf.Round(pos.x));
+       // Debug.Log("Column:" + Mathf.Round(pos.x) + ", Row: " + Mathf.Round(-pos.y) + ", " + idx);
+        return idx;
+    }
+
+    private static Vector3 GetPositionFromIndex(int tileIdx, Grid Grid) {
+        int currentRow = tileIdx / Grid.NumColumns;
+        int currentColumn = tileIdx % Grid.NumRows;
+        Vector3 Offset = Grid.transform.position;
+        Vector3 position = new Vector3(
+            currentColumn * Grid.TileSize, -currentRow * Grid.TileSize, Grid.transform.position.z)
+            + Offset
+            + new Vector3(Grid.TileSize / 2, -Grid.TileSize / 2);
+        return position;
+    }
+
     private Grid Grid { get; set; }
     public Tile[] Tiles { get; private set; }
     public int TileResolution { get; private set; }
@@ -22,9 +45,11 @@ public class TerrainData : MonoBehaviour {
     [SerializeField]
     private Texture2D[] TileTextures;
 
+
     private void Awake() {
         Grid = this.GetComponent<Grid>();
         Debug.Assert(Grid != null);
+        
         Tiles = new Tile[Grid.NumTiles];
         TileResolution = TerrainNode["TileResolution"];
         CreateTerrain();
@@ -129,11 +154,7 @@ public class TerrainData : MonoBehaviour {
                     }
                 }
                 int randomType = allowedTileTypes[Random.Range(0, allowedTileTypes.Count)];
-                Vector3 offset = new Vector3(
-                    -Grid.NumRows / 2 * Grid.TileSize + Grid.TileSize / 2, 
-                    Grid.NumColumns / 2 * Grid.TileSize + Grid.TileSize / 2, 
-                    Grid.transform.position.z);
-                Vector3 position = new Vector3(Grid.TileSize * currentColumn, -Grid.TileSize * currentRow) + offset;
+                Vector3 position = GetPositionFromIndex(idx, Grid);
                 Tiles[idx] = new Tile(randomType, currentRow * currentColumn + currentColumn, position);
                 Tiles[idx].Neighbours = neigh;
                 if (Tiles[idx - 1] != null)
@@ -152,13 +173,7 @@ public class TerrainData : MonoBehaviour {
     }
 
     private void CreateSandOrWater(int i, int tileIdx, int nIdx, JSONNode bRatio, Tile.Sides nDirection, Tile.Sides tDirection) {
-        Vector3 offset = new Vector3(
-            -Grid.NumRows / 2 * Grid.TileSize + Grid.TileSize / 2, 
-            Grid.NumColumns / 2 * Grid.TileSize + Grid.TileSize / 2, 
-            Grid.transform.position.z);
-        int currentRow = tileIdx / Grid.NumColumns;
-        int currentColumn = tileIdx % Grid.NumRows;
-        Vector3 position = new Vector3(Grid.TileSize * currentColumn, -Grid.TileSize * currentRow) + offset;
+        Vector3 position = GetPositionFromIndex(tileIdx, Grid);
         if (Random.Range(0.0f, 100.0f) <= bRatio[((int)Tile.TileType.Sand).ToString()]) {
             Tiles[tileIdx] = new Tile(Tile.TileType.Sand, tileIdx, position);
         } else {

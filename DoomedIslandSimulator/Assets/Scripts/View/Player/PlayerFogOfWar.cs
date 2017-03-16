@@ -34,7 +34,6 @@ public class PlayerFogOfWar : MonoBehaviour {
     }
 
 	private void Update () {
-        UpdateFogOfWar();
     }
 
     public void UpdateFogOfWar() {
@@ -54,14 +53,25 @@ public class PlayerFogOfWar : MonoBehaviour {
         float numVertsInTri = 3;
         int currTriIdx = hit.triangleIndex;
 
-        for (int i = 0; i < Tiles.Length; i++) {
-            for (int j = i * VertsInASquare; j < i * VertsInASquare + 6; j++) {
-                if (!Tiles[i].IsDiscovered) {
-                    colors[i] = new Color32(0, 0, 0, 255);
-                } else if (Tiles[i].IsRevealed) {
-                    colors[i] = new Color32(0, 0, 0, 50);
+        for (int i = 0; i < (Tiles.Length * 2); i = i + 2) {
+            Vector3[] p = new Vector3[6];
+            for (int j = 0; j < numVertsInTri; j++) {
+                if (Tiles[i / 2].IsDiscovered) {
+                    p[j] = hitTransform.TransformPoint(vertices[triangles[i * 3 + j]]);
+                    p[j + 3] = hitTransform.TransformPoint(vertices[triangles[(i + 1) * 3 + j]]);
+                    colors[triangles[i * 3 + j]] = new Color32(0, 0, 0, 50);
+                    colors[triangles[(i + 1) * 3 + j]] = new Color32(0, 0, 0, 50);
+                } else {
+                    colors[triangles[i * 3 + j]] = new Color32(0, 0, 0, 255);
+                    colors[triangles[(i + 1) * 3 + j]] = new Color32(0, 0, 0, 255);
                 }
             }
+            Debug.DrawLine(p[0], p[1], Color.red);
+            Debug.DrawLine(p[1], p[2], Color.red);
+            Debug.DrawLine(p[2], p[0], Color.red);
+            Debug.DrawLine(p[3], p[4], Color.red);
+            Debug.DrawLine(p[4], p[5], Color.red);
+            Debug.DrawLine(p[5], p[3], Color.red);
         }
         
         HashSet<int> triIndices = GetVisionIndices(currTriIdx);
@@ -96,11 +106,35 @@ public class PlayerFogOfWar : MonoBehaviour {
         HashSet<int> temp = new HashSet<int>();
         for (int i = 0; i < size; i++) {
             temp = new HashSet<int>(triIndices);
-            foreach (int idx in temp) {                
-                AddTileIndex(AddTileIndex(idx, triIndices, Tile.Sides.Left), triIndices, Tile.Sides.Bottom);
-                AddTileIndex(AddTileIndex(idx, triIndices, Tile.Sides.Right), triIndices, Tile.Sides.Top);
-                AddTileIndex(AddTileIndex(idx, triIndices, Tile.Sides.Top), triIndices, Tile.Sides.Left);
-                AddTileIndex(AddTileIndex(idx, triIndices, Tile.Sides.Bottom), triIndices, Tile.Sides.Right);                
+            foreach (int idx in temp) {
+                int left = AddTileIndex(idx, triIndices, Tile.Sides.Left);
+                int right = AddTileIndex(idx, triIndices, Tile.Sides.Right);
+                int top = AddTileIndex(idx, triIndices, Tile.Sides.Top);
+                int bottom = AddTileIndex(idx, triIndices, Tile.Sides.Bottom);
+
+                if (left != -1) {
+                    AddTileIndex(left, triIndices, Tile.Sides.Bottom);
+                } else if (bottom != -1) {
+                    AddTileIndex(bottom, triIndices, Tile.Sides.Left);
+                }
+
+                if (bottom != -1) {
+                    AddTileIndex(bottom, triIndices, Tile.Sides.Right);
+                } else if (right != -1) {
+                    AddTileIndex(right, triIndices, Tile.Sides.Bottom);
+                }
+
+                if (right != -1) {
+                    AddTileIndex(right, triIndices, Tile.Sides.Top);
+                } else if (top != -1) {
+                    AddTileIndex(top, triIndices, Tile.Sides.Right);
+                }
+
+                if (top != -1) {
+                    AddTileIndex(top, triIndices, Tile.Sides.Left);
+                } else if (left != -1) {
+                    AddTileIndex(left, triIndices, Tile.Sides.Top);
+                }              
             }
         }
         return triIndices;
@@ -124,7 +158,7 @@ public class PlayerFogOfWar : MonoBehaviour {
                 return idx - 2;
             case Tile.Sides.Right:
                 int curRow = (idx / Grid.NumColumns) + 1;
-                if (idx == (curRow * Grid.NumColumns))
+                if (idx == (curRow * Grid.NumColumns) - 2)
                     return -1;
                 indices.Add(idx + 2);
                 return idx + 2;

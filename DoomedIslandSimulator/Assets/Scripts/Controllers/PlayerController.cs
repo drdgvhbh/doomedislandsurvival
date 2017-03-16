@@ -7,8 +7,12 @@ public class PlayerController : MonoBehaviour {
     private Tile.Sides Direction;
     private Tile DestinationTile;
 
+    [SerializeField]
+    private GameObject GridObj;
+    private Grid Grid;
     private void Awake() {
         Pd = GetComponent<PlayerData>();
+        Grid = GridObj.GetComponent<Grid>();
     }
 
     private void Update() {
@@ -20,6 +24,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private bool CheckForMovement() {
+        DestinationTile = Pd.CurrentTile;
         if (Input.GetAxisRaw("Vertical") > 0) {
             Direction = Tile.Sides.Top;
             if (Pd.CurrentTile.Neighbours.ContainsKey(Tile.Sides.Top))
@@ -40,13 +45,16 @@ public class PlayerController : MonoBehaviour {
             Pd.IsPerformingMovingAction = false;
             return false;
         }
-        Pd.IsPerformingMovingAction = true;
-        float step = (Pd.MovementSpeed / DestinationTile.MovementCost) * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, DestinationTile.Position, step);
-        Debug.Log((Vector3.Distance(transform.position, DestinationTile.Position)));
-        if (Vector3.Distance(transform.position, DestinationTile.Position) == 0) {
-            Pd.CurrentTile = DestinationTile;
+        float step = Mathf.Abs(Pd.MovementSpeed / Pd.CurrentTile.MovementCost) * Time.deltaTime;
+
+        if (DestinationTile.IsWalkable) {
+            transform.position = Vector3.MoveTowards(transform.position, DestinationTile.Position, step);
+        } else if (Vector3.Distance(DestinationTile.Position, Pd.CurrentTile.Position) > Grid.TileSize / 2) {
+            transform.position = Vector3.MoveTowards(transform.position, Pd.CurrentTile.Position, step);
         }
+        Pd.DiscoverTiles();
+        Pd.CalculateCurrentTIle();
+        Pd.IsPerformingMovingAction = true;
         return true;
     }
 }
