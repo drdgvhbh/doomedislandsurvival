@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SlotInput : MonoBehaviour, IDropHandler {
+public class SlotInput : MonoBehaviour/*, IDropHandler */{
     public int SlotID { get; set; }
     public Item StoredItem { get; set; }
     public bool CraftingSlot { get; set; }
 
     public static PlayerData Pd;
 
-    public void OnDrop(PointerEventData eventData) {        
+    /*public void OnDrop(PointerEventData eventData) {        
         if (PlayerData.Slots[SlotID] == null)
             return;
         Debug.Assert(PlayerData.Slots[SlotID].transform.childCount == 0 || PlayerData.Slots[SlotID].transform.childCount == 1);
@@ -64,5 +64,5 @@ public class SlotInput : MonoBehaviour, IDropHandler {
         droppedItem.transform.localPosition = Vector2.zero;
         this.StoredItem = droppedItem.GetComponent<ItemInput>().Item;
         this.StoredItem.Slot = this.SlotID;
-    }
+    }*/
 }
