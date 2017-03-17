@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class PlayerData : MonoBehaviour {
     private static JSONNode DataNode;
@@ -32,13 +33,20 @@ public class PlayerData : MonoBehaviour {
     public float NourishmentThres { get; set; }
     public int NourishmentLevel { get; set; }
 
+    [SerializeField]
+    private GameObject SlotPanel;
+
     private HashSet<Tile> DiscoveredTiles;
 
     public bool IsPerformingAction { get; set; }
     public bool IsPerformingMovingAction { get; set; }
 
-    private void Awake() {
+    public Dictionary<Item.Items, Item> Inventory { get; private set; } 
 
+    public List<SlotContainer> SlotContainers { get; private set; }
+
+    private void Awake() {
+        Inventory = new Dictionary<Item.Items, Item>();
         VisionRange = PlayerNode["VisionRange"];
         JSONNode stats = PlayerNode["Stats"];
         NourishmentLevel = 3;
@@ -52,13 +60,45 @@ public class PlayerData : MonoBehaviour {
         Nourishment =  1 / 2.0f * NourishmentThres;
         Tiles = GameGrid.GetComponent<TerrainData>().Tiles;
         DiscoveredTiles = new HashSet<Tile>();
+        SlotContainers = (SlotPanel.transform.GetComponentsInChildren<SlotContainer>()).OfType<SlotContainer>().ToList();
+            SlotPanel.transform.GetComponentsInChildren<SlotContainer>();
+        AddItem(Item.Items.Shovel);
+        AddItem(Item.Items.Berry);
     }
 
     private void Start() {
-        CurrentTile = Tiles[UnityEngine.Random.Range(0, Tiles.Length)];
+        Tile[] walkable = GameGrid.GetComponent<TerrainData>().WalkableTiles;
+        CurrentTile = walkable[UnityEngine.Random.Range(0, walkable.Length)];
         this.transform.position = CurrentTile.Position;
         IsPerformingAction = false;
         DiscoverTiles();
+    }
+
+    public Item AddItem(Item.Items it) {
+        if (!(Inventory.ContainsKey(it))) {
+            Item item = new Item(it);
+            Inventory.Add(it, item);
+            foreach (SlotContainer obj in SlotContainers) {
+                if (obj.AddItem(item)) {
+                    break;
+                }
+            }
+                return item;
+        }
+        return null;
+    }
+
+    public bool AddItem(Item.Items key, Item it) {
+        if (!(Inventory.ContainsKey(key))) {
+            Inventory.Add(key, it);
+            foreach (SlotContainer obj in SlotContainers) {
+                if (obj.AddItem(it)) {
+                    break;
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
     public void CalculateCurrentTIle() {

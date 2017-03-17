@@ -1,6 +1,7 @@
 ﻿using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TerrainData : MonoBehaviour {
@@ -45,16 +46,17 @@ public class TerrainData : MonoBehaviour {
     [SerializeField]
     private Texture2D[] TileTextures;
 
+    public Tile[] WalkableTiles { get; private set; }
 
     private void Awake() {
         Grid = this.GetComponent<Grid>();
-        Debug.Assert(Grid != null);
-        
+        Debug.Assert(Grid != null);        
         Tiles = new Tile[Grid.NumTiles];
         TileResolution = TerrainNode["TileResolution"];
         CreateTerrain();
         CreateTexture();
         UpdateTileView();
+        WalkableTiles = (from t in Tiles where t.IsWalkable == true select t).ToArray();
     }
 
 	private void Start () {

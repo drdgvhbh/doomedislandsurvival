@@ -4,6 +4,40 @@
 	
 	"Stats" : 
 	{
-		"MovementSpeed" : 1
+		"MovementSpeed" : 1,
+
+		"NourishmentLevels" : 
+		{
+			"0" : -2,
+			"1" : -1,
+			"2" : 0,
+			"3" : 1,
+			"4" : 2
+		}
+	,
+
+		"NourishmentThreshold" :
+		{
+			"Base" : 1.15,
+			"Multi" : 100.0
+		}
+	,
+		"MaximumHealth" :
+		{
+			"Base" : 2,
+			"Multi" : 100.0
+		}
+	,
+		"MaximumStamina" :
+		{
+			"Base" : 2.1,
+			"Multi" : 100.0
+		}
+	,
+		"MaximumMovementSpeed" :
+		{
+			"Base" : 2.1,
+			"Multi" : 100.0
+		}
 	}
 }

@@ -1,0 +1,295 @@
+{
+	"Items": 
+	{
+		"Gem" : 
+		{
+			"Name" : "Gem",
+			"Description" : "A very precious stone.",
+			"MaximumQuantity" : 5,
+			"Icon" : "Sprites/blue_gem_1",
+			"IconIndex" : 0,
+			"StaminaCost" : 0,
+			"ChannelDuration" : 0,
+			"Consumable" : false,
+			"Locations" : ["Sand"],
+			"UsableIn" :,
+			"Components" :,
+			"Damage"
+		}
+,
+		"Pickaxe" : 
+		{
+			"Name" : "Pickaxe",
+			"Description" : "A tool for mining ore in the mountains.",
+			"MaximumQuantity" : 1,
+			"Icon" : "Sprites/farmTools",
+			"IconIndex" : 11,
+			"StaminaCost" : 20.0,
+			"ChannelDuration" : 2.5,
+			"Consumable" : false,
+			"Locations" :,
+			"UsableIn" : ["Mountains"],
+			"Components" : 
+			{
+				"0" :
+				{ 
+					"Type" :"Wood",
+					"Quantity" : 1
+				},
+				"1" :
+				{ 
+					"Type" :"Stone",
+					"Quantity" : 2
+				}
+			},
+			"Damage"
+		}
+,
+		"Placeholder" : 
+		{
+			"Name" : "Placeholder",
+			"Description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mollis lectus. Suspendisse ultricies euismod.",
+			"MaximumQuantity" : 0,
+			"Icon" : "Sprites/placeholder",
+			"IconIndex" : 0,
+			"StaminaCost" : 0,
+			"ChannelDuration" : 0,
+			"Consumable" : false,
+			"Locations" :,
+			"UsableIn" :,
+			"Components" :,
+			"Damage"
+		}
+,
+		"Shovel" : 
+		{
+			"Name" : "Shovel",
+			"Description" : "A tool for digging up random items in the ground. Items can be buried very deep, so be sure to dig more than once!",
+			"MaximumQuantity" : 1,
+			"Icon" : "Sprites/farmTools",
+			"IconIndex" : 10,
+			"StaminaCost" : 8.0,
+			"ChannelDuration" : 1.25,
+			"Consumable" : false,
+			"Locations" :,
+			"UsableIn" : ["Sand", "Grass"],
+			"Components" :,
+			"Damage"
+		}
+,
+		"Stick" : 
+		{
+			"Name" : "Stick",
+			"Description" : "A wooden stick. Sharp and deadly.",
+			"MaximumQuantity" : 5,
+			"Icon" : "Sprites/stick",
+			"IconIndex" : 0,
+			"StaminaCost" : 0,
+			"ChannelDuration" : 0,
+			"Consumable" : false,
+			"Locations" : ["Sand", "Grass"],
+			"UsableIn" : ,
+			"Components" :,
+			"Damage"
+		}
+,
+		"Stone" : 
+		{
+			"Name" : "Stone",
+			"Description" : "A mythical stone dated back to the First Age.",
+			"MaximumQuantity" : 5,
+			"Icon" : "Sprites/stone",
+			"IconIndex" : 0,
+			"StaminaCost" : 0,
+			"ChannelDuration" : 0,
+			"Consumable" : false,
+			"Locations" : ["Sand", "Grass"],
+			"UsableIn" : ,
+			"Components" :,
+			"Damage"
+		}
+,
+		"Tent" : 
+		{
+			"Name" : "Tent",
+			"Description" : "A consumable structure than can be placed on the ground. When the player is on the same tile as the tent, the player will regenerate stamina based on the player's nourishment level.",
+			"MaximumQuantity" : 1,
+			"Icon" : "Sprites/Tent",
+			"IconIndex" : 0,
+			"StaminaCost" : 10.0,
+			"ChannelDuration" : 3.0,
+			"Consumable" : true,
+			"Locations" : ,
+			"UsableIn" : ["All"],
+			"Components" : 			
+			{
+				"0" :
+				{ 
+					"Type" :"Fabric",
+					"Quantity" : 4
+				},
+			},
+			"Damage" :
+		}
+,
+		"Wood" : 
+		{
+			"Name" : "Wood",
+			"Description" : "A wooden log.",
+			"MaximumQuantity" : 5,
+			"Icon" : "Sprites/wood",
+			"IconIndex" : 0,
+			"StaminaCost" : 0,
+			"ChannelDuration" : 0,
+			"Consumable" : false,
+			"Locations" : ["Grass"],
+			"UsableIn" :,
+			"Components" : ,
+			"Damage" :
+		}
+,	
+		"Spear" : 
+		{
+			"Name" : "Spear",
+			"Description" : "An excellent weapon for striking fear into the hearts of your enemies.",
+			"MaximumQuantity" : 1,
+			"Icon" : "Sprites/spear",
+			"IconIndex" : 0,
+			"StaminaCost" : 15.0,
+			"ChannelDuration" : 0.5,
+			"Consumable" : false,
+			"Locations" :,
+			"UsableIn" : ,
+			"Components" :
+			{
+				"0" :
+				{ 
+					"Type" :"Wood",
+					"Quantity" : 2
+				},
+				"1" :
+				{ 
+					"Type" :"Silver Ore",
+					"Quantity" : 1
+				},
+			},
+			"Damage" : 15 
+		}
+,	
+		"Coconut" : 
+		{
+			"Name" : "Coconut",
+			"Description" : "An excellent beverage and a source of potassium!",
+			"MaximumQuantity" : 5,
+			"Icon" : "Sprites/coconut",
+			"IconIndex" : 0,
+			"StaminaCost" : 3.0,
+			"ChannelDuration" : 0.75,
+			"Consumable" : true,
+			"Locations" : ["Sand"],
+			"UsableIn" : ["All"],
+			"Components" :,
+			"Damage" : 0, 
+			"NourishmentReplenishment" : 6
+		}
+,	
+		"Fabric" : 
+		{
+			"Name" : "Fabric",
+			"Description" : "The silk of the land",
+			"MaximumQuantity" : 8,
+			"Icon" : "Sprites/armor",
+			"IconIndex" : 0,
+			"StaminaCost" : 0,
+			"ChannelDuration" : 0,
+			"Consumable" : false,
+			"Locations" : ["Enemy"],
+			"UsableIn" : ,
+			"Components" :,
+			"Damage" : 0, 
+			"NourishmentReplenishment" : 0
+		}
+,	
+		"Radar" : 
+		{
+			"Name" : "Radar",
+			"Description" : "Scans the ground to see if there is a sacred item within a two tile radius.",
+			"MaximumQuantity" : 1,
+			"Icon" : "Sprites/radar",
+			"IconIndex" : 0,
+			"StaminaCost" : 3.0,
+			"ChannelDuration" : 5.0,
+			"Consumable" : false,
+			"Locations" : ,
+			"UsableIn" : ["All"],
+			"Components" : 
+			{
+				"0" :
+				{ 
+					"Type" :"Wood",
+					"Quantity" : 3
+				},
+				"1" :
+				{ 
+					"Type" :"Stone",
+					"Quantity" : 4
+				},
+				"2" :
+				{ 
+					"Type" :"Gem",
+					"Quantity" : 1
+				}
+			},
+			"Damage" : 0, 
+			"NourishmentReplenishment" : 0
+		}
+,	
+		"Berry" : 
+		{
+			"Name" : "Berry",
+			"Description" : "Small, pulpy and edible. Very juicy!",
+			"MaximumQuantity" : 5,
+			"Icon" : "Sprites/berry",
+			"IconIndex" : 0,
+			"StaminaCost" : 3.0,
+			"ChannelDuration" : 0.75,
+			"Consumable" : true,
+			"Locations" : ["Grass"],
+			"UsableIn" : ["All"],
+			"Components" :,
+			"Damage" : 0, 
+			"NourishmentReplenishment" : 4
+		}
+,	
+		"Cocoberry" : 
+		{
+			"Name" : "Cocoberry",
+			"Description" : "A fine combination of coconuts and berries. This item provides more nourishment points in comparison to its individual components",
+			"MaximumQuantity" : 3,
+			"Icon" : "Sprites/cocoberry",
+			"IconIndex" : 0,
+			"StaminaCost" : 3.0,
+			"ChannelDuration" : 1.0,
+			"Consumable" : true,
+			"Locations" : ,
+			"UsableIn" : ["All"],
+			"Components" :
+						{
+				"0" :
+				{ 
+					"Type" :"Coconut",
+					"Quantity" : 2
+				},
+				"1" :
+				{ 
+					"Type" :"Berry",
+					"Quantity" : 1
+				}
+			},
+			"Damage" : 0, 
+			"NourishmentReplenishment" : 20
+		}
+
+	}
+
+}

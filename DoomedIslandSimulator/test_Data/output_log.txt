@@ -2,10 +2,10 @@ Mono path[0] = 'D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test
 Mono path[1] = 'D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test_Data/Mono'
 Mono config path = 'D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test_Data/Mono/etc'
 PlayerConnection initialized from D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/test_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55012
-Multi-casting "[IP] 192.168.0.15 [Port] 55012 [Flags] 2 [Guid] 2438456777 [EditorId] 2103382398 [Version] 1048832 [Id] WindowsPlayer(RYANLEE-PC) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55012]
-PlayerConnection already initialized - listening to [0.0.0.0:55012]
+PlayerConnection initialized network socket : 0.0.0.0 55355
+Multi-casting "[IP] 192.168.0.15 [Port] 55355 [Flags] 2 [Guid] 1595410768 [EditorId] 646415534 [Version] 1048832 [Id] WindowsPlayer(RYANLEE-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55355]
+PlayerConnection already initialized - listening to [0.0.0.0:55355]
 Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -29,18 +29,158 @@ Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\t
 Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\TextMeshPro.dll (this message is harmless)
 Loading D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\TextMeshPro.dll into Unity Child Domain
-- Completed reload, in  0.032 seconds
+- Completed reload, in  0.022 seconds
 Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-The referenced script on this Behaviour (Game Object 'Player') is missing!
+UnloadTime: 0.973950 ms
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
  
-(Filename: C:/buildslave/unity/build/Runtime/Mono/MonoBehaviour.cpp Line: 1754)
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
 
-UnloadTime: 1.160617 ms
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
+ItemContainer (UnityEngine.GameObject)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+SlotContainer:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\SlotContainer.cs:15)
+ 
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/SlotContainer.cs Line: 15)
+
 GameGrid initialized.
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
@@ -66,10 +206,10 @@ UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
 UnityEngine.Debug:Log(Object)
-TerrainData:UpdateTileView() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\TerrainData.cs:215)
-TerrainData:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\TerrainData.cs:57)
+TerrainData:UpdateTileView() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\TerrainData.cs:217)
+TerrainData:Awake() (at D:\Repositories\DoomedIslandSimulator\DoomedIslandSimulator\Assets\Scripts\Data\TerrainData.cs:58)
  
-(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/TerrainData.cs Line: 215)
+(Filename: D:/Repositories/DoomedIslandSimulator/DoomedIslandSimulator/Assets/Scripts/Data/TerrainData.cs Line: 217)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 3a58 -> priority: 1 
+  Thread -> id: 2960 -> priority: 1 

@@ -15,8 +15,6 @@ public class PlayerFogOfWar : MonoBehaviour {
         }
     }
 
-    private static int VertsInASquare = 6;
-
     // 0 -> 0 tiles, 1 -> 1 tiles, 2 -> 9 tiles, 3 -> 25 tiles ...
     private int VisionRange;
     [SerializeField]
